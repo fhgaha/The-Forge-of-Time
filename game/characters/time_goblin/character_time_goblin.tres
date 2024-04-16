@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://87yy0s1s06da"]
+
+[ext_resource type="Script" path="res://game/characters/time_goblin/character_time_goblin_state.gd" id="1_wuk8r"]
+
+[resource]
+resource_name = "TimeGoblin"
+script = ExtResource("1_wuk8r")
+script_name = "TimeGoblin"
+scene = "res://game/characters/time_goblin/character_time_goblin.tscn"

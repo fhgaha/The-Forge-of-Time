@@ -1,0 +1,130 @@
+[gd_scene load_steps=8 format=3 uid="uid://dpgevmwf1ekik"]
+
+[ext_resource type="Script" path="res://game/characters/hero/character_hero.gd" id="1_wpdcw"]
+[ext_resource type="Texture2D" uid="uid://buhblckf7wody" path="res://assets/tex/hero/Spritesheet.png" id="2_52gw4"]
+
+[sub_resource type="Animation" id="Animation_u357t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_axuhu"]
+resource_name = "idle"
+length = 0.001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_fhnk6"]
+resource_name = "talk"
+length = 0.001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_crys2"]
+resource_name = "walk"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d7btf"]
+_data = {
+"RESET": SubResource("Animation_u357t"),
+"idle": SubResource("Animation_axuhu"),
+"talk": SubResource("Animation_fhnk6"),
+"walk": SubResource("Animation_crys2")
+}
+
+[node name="CharacterHero" type="Area2D"]
+position = Vector2(0, -16)
+script = ExtResource("1_wpdcw")
+text_color = Color(0.447059, 0.447059, 0.447059, 1)
+flips_when = 1
+walk_speed = 50.0
+popochiu_placeholder = null
+script_name = "Hero"
+description = "Hero"
+clickable = false
+baseline = 14
+cursor = 8
+interaction_polygon = PackedVector2Array()
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+
+[node name="ScalingPolygon" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="BaselineHelper" type="Line2D" parent="."]
+visible = false
+position = Vector2(0, 14)
+points = PackedVector2Array(-10000, 0, 10000, 0)
+width = 1.0
+
+[node name="WalkToHelper" type="Marker2D" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="WalkToHelper"]
+offset_left = -2.5
+offset_top = -2.5
+offset_right = 2.5
+offset_bottom = 2.5
+color = Color(0, 1, 1, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_d7btf")
+}
+speed_scale = 1.543
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_52gw4")
+hframes = 2
+vframes = 2
+
+[node name="DialogPos" type="Marker2D" parent="."]
+visible = false
+position = Vector2(0, -21)

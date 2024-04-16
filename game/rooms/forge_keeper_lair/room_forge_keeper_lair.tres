@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cs5wnxsocumhv"]
+
+[ext_resource type="Script" path="res://game/rooms/forge_keeper_lair/room_forge_keeper_lair_state.gd" id="1_7rdt2"]
+
+[resource]
+resource_name = "ForgeKeeperLair"
+script = ExtResource("1_7rdt2")
+script_name = "ForgeKeeperLair"
+scene = "res://game/rooms/forge_keeper_lair/room_forge_keeper_lair.tscn"
+visited = false
+visited_first_time = false
+visited_times = 0

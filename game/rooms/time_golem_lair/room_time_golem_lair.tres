@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://caos3qt0y46ku"]
+
+[ext_resource type="Script" path="res://game/rooms/time_golem_lair/room_time_golem_lair_state.gd" id="1_vbwww"]
+
+[resource]
+resource_name = "TimeGolemLair"
+script = ExtResource("1_vbwww")
+script_name = "TimeGolemLair"
+scene = "res://game/rooms/time_golem_lair/room_time_golem_lair.tscn"
+visited = false
+visited_first_time = false
+visited_times = 0

@@ -1,0 +1,106 @@
+[gd_scene load_steps=7 format=3 uid="uid://yn0icexg3mqq"]
+
+[ext_resource type="Script" path="res://game/characters/time_goblin/character_time_goblin.gd" id="1_nd6g3"]
+[ext_resource type="Texture2D" uid="uid://bhv33v711k7yw" path="res://assets/tex/goblin_lair/time_goblin_lair.png" id="2_rrcj4"]
+
+[sub_resource type="Animation" id="Animation_eynav"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_tygeo"]
+resource_name = "fall"
+length = 0.001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_kxt6j"]
+resource_name = "idle"
+length = 0.001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i1xst"]
+_data = {
+"RESET": SubResource("Animation_eynav"),
+"fall": SubResource("Animation_tygeo"),
+"idle": SubResource("Animation_kxt6j")
+}
+
+[node name="CharacterTimeGoblin" type="Area2D"]
+script = ExtResource("1_nd6g3")
+popochiu_placeholder = null
+script_name = "TimeGoblin"
+description = "Time Goblin"
+cursor = 8
+interaction_polygon = PackedVector2Array()
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="."]
+visible = false
+position = Vector2(-28, -13)
+scale = Vector2(8.1875, 8.1875)
+polygon = PackedVector2Array(-10, -10, 10, -10, 11.4809, 0.122137, 10, 10, -10, 10, -12.458, 0)
+
+[node name="ScalingPolygon" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="BaselineHelper" type="Line2D" parent="."]
+visible = false
+points = PackedVector2Array(-10000, 0, 10000, 0)
+width = 1.0
+
+[node name="WalkToHelper" type="Marker2D" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="WalkToHelper"]
+offset_left = -2.5
+offset_top = -2.5
+offset_right = 2.5
+offset_bottom = 2.5
+color = Color(0, 1, 1, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_i1xst")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_rrcj4")
+hframes = 2
+frame = 1
+
+[node name="DialogPos" type="Marker2D" parent="."]
+visible = false

@@ -1,0 +1,107 @@
+[gd_scene load_steps=7 format=3 uid="uid://ba81313dym51r"]
+
+[ext_resource type="Script" path="res://game/characters/forge_keeper/character_forge_keeper.gd" id="1_eop0t"]
+[ext_resource type="Texture2D" uid="uid://b7rfbmew3lblx" path="res://assets/tex/forge_keeper_body_3.png" id="2_y7wb8"]
+
+[sub_resource type="Animation" id="Animation_23cwn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_1nmfm"]
+resource_name = "hit"
+length = 0.8235
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_wshli"]
+resource_name = "idle"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kk3d0"]
+_data = {
+"RESET": SubResource("Animation_23cwn"),
+"hit": SubResource("Animation_1nmfm"),
+"idle": SubResource("Animation_wshli")
+}
+
+[node name="CharacterForgeKeeper" type="Area2D"]
+script = ExtResource("1_eop0t")
+can_move = false
+popochiu_placeholder = null
+script_name = "ForgeKeeper"
+description = "Forge Keeper"
+baseline = 72
+cursor = 8
+interaction_polygon = PackedVector2Array()
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="."]
+visible = false
+position = Vector2(84, -35)
+polygon = PackedVector2Array(-132, -56, -20, -61, 73, -26, 83, 79, -14, 125, -115, 128, -132, 113, -133, 74, -119, 18)
+
+[node name="ScalingPolygon" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="BaselineHelper" type="Line2D" parent="."]
+visible = false
+position = Vector2(0, 72)
+points = PackedVector2Array(-10000, 0, 10000, 0)
+width = 1.0
+
+[node name="WalkToHelper" type="Marker2D" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="WalkToHelper"]
+offset_left = -2.5
+offset_top = -2.5
+offset_right = 2.5
+offset_bottom = 2.5
+color = Color(0, 1, 1, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kk3d0")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_y7wb8")
+hframes = 2
+frame = 1
+
+[node name="DialogPos" type="Marker2D" parent="."]
+visible = false
+position = Vector2(94, -14)

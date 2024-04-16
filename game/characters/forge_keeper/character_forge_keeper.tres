@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://d3sx08sq3u1f1"]
+
+[ext_resource type="Script" path="res://game/characters/forge_keeper/character_forge_keeper_state.gd" id="1_0huqi"]
+
+[resource]
+resource_name = "ForgeKeeper"
+script = ExtResource("1_0huqi")
+script_name = "ForgeKeeper"
+scene = "res://game/characters/forge_keeper/character_forge_keeper.tscn"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://ulmig6d4ccrk"]
+
+[ext_resource type="Script" path="res://game/rooms/goblin_road_2/room_goblin_road_2_state.gd" id="1_yf73g"]
+
+[resource]
+resource_name = "GoblinRoad2"
+script = ExtResource("1_yf73g")
+script_name = "GoblinRoad2"
+scene = "res://game/rooms/goblin_road_2/room_goblin_road_2.tscn"
+visited = false
+visited_first_time = false
+visited_times = 0

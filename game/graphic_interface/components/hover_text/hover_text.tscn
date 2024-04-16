@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://hd24uiojqgyk"]
+
+[ext_resource type="Theme" uid="uid://dpequqav4rjaf" path="" id="1_f1apj"]
+[ext_resource type="FontFile" uid="uid://bkajb20giiogg" path="res://game/graphic_interface/fonts/monkeyisland_1991.ttf" id="2_vyfar"]
+[ext_resource type="Script" path="res://game/graphic_interface/components/hover_text/hover_text.gd" id="3_pr3m6"]
+
+[node name="HoverText" type="RichTextLabel" groups=["popochiu_gui_component"]]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 15.0
+grow_horizontal = 2
+mouse_filter = 2
+theme = ExtResource("1_f1apj")
+theme_override_fonts/normal_font = ExtResource("2_vyfar")
+bbcode_enabled = true
+text = "[center]text for hovered objects[/center]"
+scroll_active = false
+script = ExtResource("3_pr3m6")

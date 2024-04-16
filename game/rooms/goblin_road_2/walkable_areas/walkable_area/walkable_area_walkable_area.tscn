@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfbrffv0wjtlc"]
+
+[ext_resource type="Script" path="res://game/rooms/goblin_road_2/walkable_areas/walkable_area/walkable_area_walkable_area.gd" id="1_5gpq7"]
+
+[node name="WalkableArea" type="Node2D"]
+script = ExtResource("1_5gpq7")
+script_name = "WalkableArea"
+description = "Walkable Area"
