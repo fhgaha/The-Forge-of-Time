@@ -4,42 +4,36 @@ extends PopochiuCharacter
 # Use await E.queue([]) if you want to pause the excecution of
 # the function until the sequence of events finishes.
 
-const Data := preload('character_time_goblin_state.gd')
+const Data := preload('character_narrator_state.gd')
 
-var state: Data = load('res://game/characters/time_goblin/character_time_goblin.tres')
+var state: Data = load('res://game/characters/narrator/character_narrator.tres')
 
 
 #region Virtual ####################################################################################
 # When the room in which this node is located finishes being added to the tree
 func _on_room_set() -> void:
-	#R.get_prop("ToolOfTime").hide()
-	
 	pass
 
 
 # When the node is clicked
 func _on_click() -> void:
 	# Replace the call to E.command_fallback() to implement your code.
-	#E.command_fallback()
+	E.command_fallback()
 	# For example, you can make the player character walk to this character, gaze at it, and then
 	# say something:
 #	await C.player.walk_to_clicked()
 #	await C.player.face_clicked()
 #	await C.player.say("Hi!")
-	R.get_prop("ToolOfTime").show()
-	await C.TimeGoblin.play_animation("fall")
-	pass
 
 
 # When the node is right clicked
 func _on_right_click() -> void:
 	# Replace the call to E.command_fallback() to implement your code.
-	#E.command_fallback()
+	E.command_fallback()
 	# For example, you can make the player character gaze at this character and then say something:
-	await C.player.face_clicked()
-	await C.player.say("That's some scary big goblin out there innit?")
-	await C.TimeGoblin.say("I can hear that...")
-	pass
+#	await C.player.face_clicked()
+#	await C.player.say("Is someone...")
+
 
 # When the node is middle clicked
 func _on_middle_click() -> void:

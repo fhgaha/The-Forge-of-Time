@@ -1,18 +1,21 @@
 @tool
 extends PopochiuRoom
 
-const Data := preload('room_forest_enter_state.gd')
+const Data := preload('room_end_state.gd')
 
-var state: Data = load('res://game/rooms/forest_enter/room_forest_enter.tres')
+var state: Data = load('res://game/rooms/end/room_end.tres')
 
 
 #region Virtual ####################################################################################
 # What happens when Popochiu loads the room. At this point the room is in the
 # tree but it is not visible
 func _on_room_entered() -> void:
-	#A.vo_narrvoice.play()
-	await C.Narrator.say("The Adventurer, a brave and curious soul, enters the magical forest.")
-	await C.Narrator.say("The trees tower above, their leaves shimmering with an ethereal glow. A faint sound of hammering can be heard in the distance.")
+	await E.wait(1)
+	await C.Narrator.say("The Adventurer embarks on their next adventure")
+	await C.Narrator.say("Ready to face any challenge that comes their way")
+	await C.Narrator.say("End of \"The Forge of Time\"")
+	await E.wait(1)
+	await get_tree().quit()
 	pass
 
 

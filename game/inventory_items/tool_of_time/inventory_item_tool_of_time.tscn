@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7alok3es1kc"]
+
+[ext_resource type="Script" path="res://game/inventory_items/tool_of_time/inventory_item_tool_of_time.gd" id="1_hpkok"]
+[ext_resource type="Texture2D" uid="uid://5ubsd020h4e3" path="res://assets/tex/goblin_lair/tool_of_time.png" id="1_rrmln"]
+
+[node name="ItemToolOfTime" type="TextureRect"]
+texture_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 0
+texture = ExtResource("1_rrmln")
+stretch_mode = 5
+script = ExtResource("1_hpkok")
+script_name = "ToolOfTime"
+description = "Tool Of Time"

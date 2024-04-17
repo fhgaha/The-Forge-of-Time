@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bt85b8dcftpy1"]
+[gd_scene load_steps=9 format=3 uid="uid://cp2ypoge4o6ke"]
 
 [ext_resource type="Script" path="res://game/rooms/forest_enter/room_forest_enter.gd" id="1_u2wvl"]
 [ext_resource type="PackedScene" uid="uid://dq1co157e30b2" path="res://game/rooms/forest_enter/walkable_areas/walkable_area/walkable_area_walkable_area.tscn" id="2_a1nma"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dxkbcsde1kmh1" path="res://assets/tex/bg_1_bw.png" id="3_ulpn7"]
 [ext_resource type="PackedScene" uid="uid://dpgevmwf1ekik" path="res://game/characters/hero/character_hero.tscn" id="5_djnm4"]
 [ext_resource type="PackedScene" uid="uid://hupo6yw5r5as" path="res://game/rooms/forest_enter/hotspots/door/hotspot_door.tscn" id="5_enq1w"]
+[ext_resource type="PackedScene" uid="uid://cqcs2kmteynj4" path="res://game/characters/narrator/character_narrator.tscn" id="7_8e2gm"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_h64d2"]
 vertices = PackedVector2Array(111, 90, -141, 91, -117, 68, -24, 50, 57, 12, 36, 11)
@@ -50,3 +51,5 @@ interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
 position = Vector2(60, 149)
 text_color = Color(1, 1, 1, 1)
 baseline = 0
+
+[node name="CharacterNarrator *" parent="Characters" instance=ExtResource("7_8e2gm")]

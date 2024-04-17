@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://rxb7c5312dc1"]
+
+[ext_resource type="Script" path="res://game/rooms/end/room_end.gd" id="1_cgici"]
+[ext_resource type="PackedScene" uid="uid://dlsw4hwm8q6w6" path="res://game/rooms/end/props/bg/prop_bg.tscn" id="2_0g3f5"]
+[ext_resource type="PackedScene" uid="uid://cqcs2kmteynj4" path="res://game/characters/narrator/character_narrator.tscn" id="2_r5nts"]
+[ext_resource type="Texture2D" uid="uid://dhfevptawaxnm" path="res://assets/tex/goblin_lair/bg.png" id="3_ty6t2"]
+[ext_resource type="PackedScene" uid="uid://dpgevmwf1ekik" path="res://game/characters/hero/character_hero.tscn" id="5_yudhg"]
+
+[node name="RoomEnd" type="Node2D"]
+script = ExtResource("1_cgici")
+script_name = "End"
+popochiu_placeholder = null
+
+[node name="WalkableAreas" type="Node2D" parent="."]
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="Bg" parent="Props" instance=ExtResource("2_0g3f5")]
+position = Vector2(160, 90)
+texture = ExtResource("3_ty6t2")
+interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="Hotspots" type="Node2D" parent="."]
+
+[node name="Regions" type="Node2D" parent="."]
+
+[node name="Markers" type="Node2D" parent="."]
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="CharacterNarrator *" parent="Characters" instance=ExtResource("2_r5nts")]
+position = Vector2(-25, 35)
+
+[node name="CharacterHero *" parent="Characters" instance=ExtResource("5_yudhg")]
+position = Vector2(26, -39)

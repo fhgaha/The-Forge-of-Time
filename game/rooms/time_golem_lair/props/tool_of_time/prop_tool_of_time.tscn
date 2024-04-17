@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://be7xmtct2a50x"]
+
+[ext_resource type="Script" path="res://game/rooms/time_golem_lair/props/tool_of_time/prop_tool_of_time.gd" id="1_m7o2g"]
+
+[node name="ToolOfTime" type="Area2D"]
+script = ExtResource("1_m7o2g")
+script_name = "ToolOfTime"
+description = "Tool Of Time"
+cursor = 1
+interaction_polygon = PackedVector2Array()
+
+[node name="BaselineHelper" type="Line2D" parent="."]
+visible = false
+points = PackedVector2Array(-10000, 0, 10000, 0)
+width = 1.0
+
+[node name="WalkToHelper" type="Marker2D" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="WalkToHelper"]
+offset_left = -2.5
+offset_top = -2.5
+offset_right = 2.5
+offset_bottom = 2.5
+color = Color(0, 1, 1, 1)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

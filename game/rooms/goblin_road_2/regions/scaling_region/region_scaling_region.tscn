@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://4oj5igvgr1xv"]
+
+[ext_resource type="Script" path="res://game/rooms/goblin_road_2/regions/scaling_region/region_scaling_region.gd" id="1_mg1mx"]
+
+[node name="ScalingRegion" type="Area2D"]
+monitorable = false
+script = ExtResource("1_mg1mx")
+script_name = "ScalingRegion"
+description = "Scaling Region"

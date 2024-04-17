@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cc2wkblsl4k3k"]
+[gd_scene load_steps=10 format=3 uid="uid://cc2wkblsl4k3k"]
 
 [ext_resource type="Script" path="res://game/rooms/forge_keeper_lair/room_forge_keeper_lair.gd" id="1_vl1xx"]
 [ext_resource type="PackedScene" uid="uid://cs0w0jn3htg1f" path="res://game/rooms/forge_keeper_lair/walkable_areas/walkable_area/walkable_area_walkable_area.tscn" id="2_4wuki"]
@@ -7,11 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://dpgevmwf1ekik" path="res://game/characters/hero/character_hero.tscn" id="4_mfyfh"]
 [ext_resource type="PackedScene" uid="uid://ba81313dym51r" path="res://game/characters/forge_keeper/character_forge_keeper.tscn" id="5_8j7x2"]
 [ext_resource type="PackedScene" uid="uid://dt5i4xj3ahpd4" path="res://game/rooms/forge_keeper_lair/hotspots/door/hotspot_door.tscn" id="5_coqj7"]
+[ext_resource type="PackedScene" uid="uid://b0sg38eet80l4" path="res://game/rooms/forge_keeper_lair/regions/scaling_region/region_scaling_region.tscn" id="6_icf26"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_dr7am"]
-vertices = PackedVector2Array(-77, -11, -20, 2, -29, 46, -154, 34, -157, 9, -102, -12)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-102, -12, -77, -11, -20, 2, -29, 46, -154, 34, -157, 9)])
+vertices = PackedVector2Array(-56, -10, -40, 81, -143, 81, -124, 9, -103, -14)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-103, -14, -56, -10, -40, 81, -143, 81, -124, 9)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 agent_radius = 0.0
 
@@ -40,17 +41,27 @@ interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
 
 [node name="Door" parent="Hotspots" instance=ExtResource("5_coqj7")]
 position = Vector2(75, 52)
-walk_to_point = Vector2(0, 24)
+baseline = 22
+walk_to_point = Vector2(0, 32)
 interaction_polygon = PackedVector2Array(-15, -20, 2, -23, 17, -14, 16, 25, -17, 23)
 
 [node name="Regions" type="Node2D" parent="."]
+
+[node name="ScalingRegion" parent="Regions" instance=ExtResource("6_icf26")]
+position = Vector2(81, 93)
+scaling = true
+scale_bottom = 3.0
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="Regions/ScalingRegion"]
+modulate = Color(0, 1, 1, 1)
+polygon = PackedVector2Array(42, 78, -64, 79, -38, -18, 25, -19)
 
 [node name="Markers" type="Node2D" parent="."]
 
 [node name="Characters" type="Node2D" parent="."]
 
 [node name="CharacterHero *" parent="Characters" instance=ExtResource("4_mfyfh")]
-position = Vector2(67, 64)
+position = Vector2(67, 86)
 scale = Vector2(1.90716, 1.90716)
 text_color = Color(1, 1, 1, 1)
 

@@ -70,7 +70,7 @@ interaction_polygon = PackedVector2Array()
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="."]
 visible = false
 position = Vector2(84, -35)
-polygon = PackedVector2Array(-132, -56, -20, -61, 73, -26, 83, 79, -14, 125, -115, 128, -132, 113, -133, 74, -119, 18)
+polygon = PackedVector2Array(-119, -60, -20, -61, 73, -26, 83, 79, -14, 125, -14, 126, -52, 95, -96, 70, -124, 28)
 
 [node name="ScalingPolygon" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)

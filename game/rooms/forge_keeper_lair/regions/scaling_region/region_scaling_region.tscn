@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0sg38eet80l4"]
+
+[ext_resource type="Script" path="res://game/rooms/forge_keeper_lair/regions/scaling_region/region_scaling_region.gd" id="1_07vo6"]
+
+[node name="ScalingRegion" type="Area2D"]
+monitorable = false
+script = ExtResource("1_07vo6")
+script_name = "ScalingRegion"
+description = "Scaling Region"

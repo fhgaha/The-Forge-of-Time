@@ -77,21 +77,24 @@ _data = {
 }
 
 [node name="CharacterHero" type="Area2D"]
-position = Vector2(0, -16)
+position = Vector2(2, -3)
 script = ExtResource("1_wpdcw")
 text_color = Color(0.447059, 0.447059, 0.447059, 1)
 flips_when = 1
 walk_speed = 50.0
+anti_glide_animation = true
 popochiu_placeholder = null
 script_name = "Hero"
 description = "Hero"
 clickable = false
-baseline = 14
+baseline = -1
+walk_to_point = Vector2(0, -7)
 cursor = 8
 interaction_polygon = PackedVector2Array()
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="."]
 visible = false
+position = Vector2(0, -16)
 polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
 
 [node name="ScalingPolygon" type="CollisionPolygon2D" parent="."]
@@ -99,12 +102,13 @@ polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
 
 [node name="BaselineHelper" type="Line2D" parent="."]
 visible = false
-position = Vector2(0, 14)
+position = Vector2(3, -1)
 points = PackedVector2Array(-10000, 0, 10000, 0)
 width = 1.0
 
 [node name="WalkToHelper" type="Marker2D" parent="."]
 visible = false
+position = Vector2(0, -7)
 
 [node name="ColorRect" type="ColorRect" parent="WalkToHelper"]
 offset_left = -2.5
@@ -121,6 +125,7 @@ speed_scale = 1.543
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+position = Vector2(0, -16)
 texture = ExtResource("2_52gw4")
 hframes = 2
 vframes = 2

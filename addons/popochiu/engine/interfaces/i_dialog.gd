@@ -96,7 +96,7 @@ func set_current_dialog(value: PopochiuDialog) -> void:
 	active = true
 	
 	await self.dialog_finished
-	
+	 
 	# Save the state of the dialog
 	trees[current_dialog.script_name] = current_dialog
 	

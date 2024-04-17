@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://cqcs2kmteynj4"]
+
+[ext_resource type="Script" path="res://game/characters/narrator/character_narrator.gd" id="1_r8avx"]
+[ext_resource type="Resource" uid="uid://cpmra8sp34diy" path="res://game/characters/narrator/audio/vo_narrator.tres" id="2_e3w5r"]
+
+[sub_resource type="Animation" id="Animation_n7uw3"]
+resource_name = "idle"
+
+[sub_resource type="Animation" id="Animation_qhn2u"]
+resource_name = "walk"
+
+[sub_resource type="Animation" id="Animation_ai7rx"]
+resource_name = "talk"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8wkyj"]
+_data = {
+"idle": SubResource("Animation_n7uw3"),
+"talk": SubResource("Animation_ai7rx"),
+"walk": SubResource("Animation_qhn2u")
+}
+
+[node name="CharacterNarrator" type="Area2D"]
+position = Vector2(-28, -28)
+script = ExtResource("1_r8avx")
+voices = [{
+"emotion": "",
+"variations": Array[Resource("res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd")]([ExtResource("2_e3w5r")])
+}]
+popochiu_placeholder = null
+script_name = "Narrator"
+description = "Narrator"
+cursor = 8
+interaction_polygon = PackedVector2Array()
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+
+[node name="ScalingPolygon" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="BaselineHelper" type="Line2D" parent="."]
+points = PackedVector2Array(-10000, 0, 10000, 0)
+width = 1.0
+
+[node name="WalkToHelper" type="Marker2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="WalkToHelper"]
+offset_left = -2.5
+offset_top = -2.5
+offset_right = 2.5
+offset_bottom = 2.5
+color = Color(0, 1, 1, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8wkyj")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+
+[node name="DialogPos" type="Marker2D" parent="."]
+position = Vector2(185, 37)

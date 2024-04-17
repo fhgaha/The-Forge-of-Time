@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ivunx16fw0o"]
+[gd_scene load_steps=9 format=3 uid="uid://ivunx16fw0o"]
 
 [ext_resource type="Script" path="res://game/rooms/goblin_road_2/room_goblin_road_2.gd" id="1_14snm"]
 [ext_resource type="PackedScene" uid="uid://0hnnqs3uflkh" path="res://game/rooms/goblin_road_2/props/bg/prop_bg.tscn" id="2_1c1lp"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d04kp128r5gmx" path="res://assets/tex/time_goblin_road.png" id="4_ykauc"]
 [ext_resource type="PackedScene" uid="uid://dlx8spifc0sjb" path="res://game/rooms/goblin_road_2/hotspots/castle/hotspot_castle.tscn" id="5_wcs0g"]
 [ext_resource type="PackedScene" uid="uid://dpgevmwf1ekik" path="res://game/characters/hero/character_hero.tscn" id="6_vneyr"]
+[ext_resource type="PackedScene" uid="uid://4oj5igvgr1xv" path="res://game/rooms/goblin_road_2/regions/scaling_region/region_scaling_region.tscn" id="6_w7pwu"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_jw6u3"]
 vertices = PackedVector2Array(-37, 59, -62, -29, -24, -26, -20, -4, 16, 37, 169, 95, 164, 67)
@@ -41,12 +42,23 @@ interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
 position = Vector2(119, 39)
 walk_to_point = Vector2(0, 25)
 interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+interaction_polygon_position = Vector2(-0.999997, -8.14743)
 
 [node name="Regions" type="Node2D" parent="."]
+
+[node name="ScalingRegion" parent="Regions" instance=ExtResource("6_w7pwu")]
+position = Vector2(160, 90)
+scaling = true
+scale_top = 0.3
+scale_bottom = 2.0
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="Regions/ScalingRegion"]
+modulate = Color(0, 1, 1, 1)
+polygon = PackedVector2Array(-64, -29, -37, 58, 124, 88, 169, 95, 165, 68, 17, 35, -16, -4, -22, -28)
 
 [node name="Markers" type="Node2D" parent="."]
 
 [node name="Characters" type="Node2D" parent="."]
 
 [node name="CharacterHero *" parent="Characters" instance=ExtResource("6_vneyr")]
-position = Vector2(310, 152)
+position = Vector2(308, 164)

@@ -26,9 +26,9 @@ func _option_selected(opt: PopochiuDialogOption) -> void:
 		"Opt1":
 			#await D.say_selected()
 			await C.ForgeKeeper.play_animation("hit")
-			await C.ForgeKeeper.say("This is where I forge the Tools of Time. They have the power to manipulate time itself.")
+			await C.ForgeKeeper.say("This is where I forge the *Tools of Time*. They have the power to manipulate time itself.")
 			await C.ForgeKeeper.play_animation("hit")
-			await C.ForgeKeeper.say("A Tool of Time has been stolen. I need you to retrieve it. It's hidden deep within the forest, guarded by the fearsome Time Golem.")
+			await C.ForgeKeeper.say("A *Tool of Time* has been stolen. I need you to retrieve it. It's hidden deep within the forest, guarded by the fearsome Time Golem.")
 			turn_off_options(["Opt1"])
 			turn_on_options(["Opt3"])
 		"Opt3":

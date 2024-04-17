@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxi7m3l8173j"]
+
+[ext_resource type="Script" path="res://game/rooms/time_golem_lair/walkable_areas/walkable_area/walkable_area_walkable_area.gd" id="1_qn71u"]
+
+[node name="WalkableArea" type="Node2D"]
+script = ExtResource("1_qn71u")
+script_name = "WalkableArea"
+description = "Walkable Area"

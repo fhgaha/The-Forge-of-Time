@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://c28kkfrboubqk"]
+
+[ext_resource type="Script" path="res://game/inventory_items/tool_of_time/inventory_item_tool_of_time_state.gd" id="1_qjuaf"]
+
+[resource]
+resource_name = "ToolOfTime"
+script = ExtResource("1_qjuaf")
+script_name = "ToolOfTime"
+scene = "res://game/inventory_items/tool_of_time/inventory_item_tool_of_time.tscn"

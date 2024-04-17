@@ -1,11 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://bj4tlqqyqe7ry"]
+[gd_scene load_steps=11 format=3 uid="uid://bj4tlqqyqe7ry"]
 
 [ext_resource type="Script" path="res://game/rooms/time_golem_lair/room_time_golem_lair.gd" id="1_wlf8j"]
 [ext_resource type="PackedScene" uid="uid://dpgevmwf1ekik" path="res://game/characters/hero/character_hero.tscn" id="2_3bchn"]
+[ext_resource type="PackedScene" uid="uid://cxi7m3l8173j" path="res://game/rooms/time_golem_lair/walkable_areas/walkable_area/walkable_area_walkable_area.tscn" id="2_mhlxp"]
 [ext_resource type="PackedScene" uid="uid://bcqvj2kmnglgu" path="res://game/rooms/time_golem_lair/props/bg/prop_bg.tscn" id="2_ud4oa"]
 [ext_resource type="Texture2D" uid="uid://dhfevptawaxnm" path="res://assets/tex/goblin_lair/bg.png" id="3_53q5q"]
 [ext_resource type="PackedScene" uid="uid://qjdnarmr5qh1" path="res://game/rooms/time_golem_lair/hotspots/goblin_hotspot/hotspot_goblin_hotspot.tscn" id="4_cyugc"]
 [ext_resource type="PackedScene" uid="uid://yn0icexg3mqq" path="res://game/characters/time_goblin/character_time_goblin.tscn" id="4_ur6pc"]
+[ext_resource type="PackedScene" uid="uid://be7xmtct2a50x" path="res://game/rooms/time_golem_lair/props/tool_of_time/prop_tool_of_time.tscn" id="5_d148v"]
+[ext_resource type="Texture2D" uid="uid://5ubsd020h4e3" path="res://assets/tex/goblin_lair/tool_of_time.png" id="6_ykljw"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_mlbpc"]
+vertices = PackedVector2Array(3, 34, -112, 25, -66, 4, 27, 4)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-66, 4, 27, 4, 3, 34, -112, 25)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
 
 [node name="RoomTimeGolemLair" type="Node2D"]
 script = ExtResource("1_wlf8j")
@@ -14,12 +24,26 @@ popochiu_placeholder = null
 
 [node name="WalkableAreas" type="Node2D" parent="."]
 
+[node name="WalkableArea" parent="WalkableAreas" instance=ExtResource("2_mhlxp")]
+position = Vector2(266, 139)
+
+[node name="Perimeter" type="NavigationRegion2D" parent="WalkableAreas/WalkableArea"]
+modulate = Color(0, 1, 0, 1)
+navigation_polygon = SubResource("NavigationPolygon_mlbpc")
+
 [node name="Props" type="Node2D" parent="."]
 
 [node name="Bg" parent="Props" instance=ExtResource("2_ud4oa")]
 position = Vector2(160, 90)
 texture = ExtResource("3_53q5q")
 interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="ToolOfTime" parent="Props" instance=ExtResource("5_d148v")]
+visible = false
+position = Vector2(178, 158)
+texture = ExtResource("6_ykljw")
+interaction_polygon = PackedVector2Array(7, -22, 20, -17, 13, 5, 1, 11, -14, 5, -15, -10)
+interaction_polygon_position = Vector2(-3, 6)
 
 [node name="Hotspots" type="Node2D" parent="."]
 
@@ -37,4 +61,4 @@ interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
 position = Vector2(160, 90)
 
 [node name="CharacterHero *" parent="Characters" instance=ExtResource("2_3bchn")]
-position = Vector2(265, 140)
+position = Vector2(256, 154)
