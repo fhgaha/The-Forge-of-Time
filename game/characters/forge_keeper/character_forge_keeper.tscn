@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://ba81313dym51r"]
+[gd_scene load_steps=8 format=3 uid="uid://ba81313dym51r"]
 
 [ext_resource type="Script" path="res://game/characters/forge_keeper/character_forge_keeper.gd" id="1_eop0t"]
-[ext_resource type="Texture2D" uid="uid://b7rfbmew3lblx" path="res://assets/tex/forge_keeper_body_3.png" id="2_y7wb8"]
+[ext_resource type="Resource" uid="uid://bi8ch5nk8b5wa" path="res://game/characters/forge_keeper/audio/vo_forge_keeper.tres" id="2_n5e57"]
+[ext_resource type="Texture2D" uid="uid://b4iaer1uy3al3" path="res://assets/tex/forge_keeper/forge_keeper_body_3.png" id="3_c8cuq"]
 
 [sub_resource type="Animation" id="Animation_23cwn"]
 length = 0.001
@@ -59,6 +60,10 @@ _data = {
 
 [node name="CharacterForgeKeeper" type="Area2D"]
 script = ExtResource("1_eop0t")
+voices = [{
+"emotion": "",
+"variations": Array[Resource("res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd")]([ExtResource("2_n5e57")])
+}]
 can_move = false
 popochiu_placeholder = null
 script_name = "ForgeKeeper"
@@ -98,7 +103,7 @@ libraries = {
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_y7wb8")
+texture = ExtResource("3_c8cuq")
 hframes = 2
 frame = 1
 

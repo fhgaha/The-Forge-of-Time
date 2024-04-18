@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dpgevmwf1ekik"]
+[gd_scene load_steps=9 format=3 uid="uid://dpgevmwf1ekik"]
 
 [ext_resource type="Script" path="res://game/characters/hero/character_hero.gd" id="1_wpdcw"]
 [ext_resource type="Texture2D" uid="uid://buhblckf7wody" path="res://assets/tex/hero/Spritesheet.png" id="2_52gw4"]
+[ext_resource type="Resource" uid="uid://dcfxmib1fa11w" path="res://game/characters/hero/audio/vo_hero.tres" id="2_yb35c"]
 
 [sub_resource type="Animation" id="Animation_u357t"]
 length = 0.001
@@ -81,6 +82,10 @@ position = Vector2(2, -3)
 script = ExtResource("1_wpdcw")
 text_color = Color(0.447059, 0.447059, 0.447059, 1)
 flips_when = 1
+voices = [{
+"emotion": "",
+"variations": Array[Resource("res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd")]([ExtResource("2_yb35c")])
+}]
 walk_speed = 50.0
 anti_glide_animation = true
 popochiu_placeholder = null

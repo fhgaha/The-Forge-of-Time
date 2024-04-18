@@ -16,19 +16,14 @@ func _on_room_set() -> void:
 	pass
 
 
-# When the node is clicked
 func _on_click() -> void:
 	await C.player.face_clicked()
 	D.TalkWithForgerKeeper.start()
 
 
-# When the node is right clicked
 func _on_right_click() -> void:
-	# Replace the call to E.command_fallback() to implement your code.
-	E.command_fallback()
-	# For example, you can make the player character gaze at this character and then say something:
-#	await C.player.face_clicked()
-	#await C.player.say("Is someone...")
+	await C.player.face_clicked()
+	await C.player.say("Enourmous guy!")
 
 
 # When the node is middle clicked

@@ -33,9 +33,9 @@ func _on_room_exited() -> void:
 var timer : float = 0
 
 func _process(delta: float) -> void:
-	if C.ForgeKeeper:
-		timer += delta
-		if (timer > 5):
-			timer = 0
-			await C.ForgeKeeper.play_animation("hit")
+	#if C.ForgeKeeper:
+	timer += delta
+	if (timer > 5):
+		timer = 0
+		C.ForgeKeeper.play_animation("hit")
 	pass

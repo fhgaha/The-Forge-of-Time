@@ -15,7 +15,7 @@ func _on_room_entered() -> void:
 	await C.Narrator.say("Ready to face any challenge that comes their way")
 	await C.Narrator.say("End of \"The Forge of Time\"")
 	await E.wait(1)
-	await get_tree().quit()
+	get_tree().quit()
 	pass
 
 

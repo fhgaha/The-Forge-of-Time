@@ -10,6 +10,8 @@ var state: Data = load('res://game/rooms/time_golem_lair/room_time_golem_lair.tr
 # What happens when Popochiu loads the room. At this point the room is in the
 # tree but it is not visible
 func _on_room_entered() -> void:
+	A.mx_peaceful.stop()
+	A.mx_boss_fight.play()
 	await C.TimeGoblin.play_animation("idle")
 	pass
 

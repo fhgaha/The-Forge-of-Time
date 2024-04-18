@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AudioCueSound" load_steps=3 format=3 uid="uid://bi8ch5nk8b5wa"]
+
+[ext_resource type="AudioStream" uid="uid://c0iypha53lcry" path="res://game/characters/forge_keeper/audio/vo_forge_keeper.wav" id="1_xm4o1"]
+[ext_resource type="Script" path="res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd" id="2_ourg0"]
+
+[resource]
+resource_name = "vo_forge_keeper"
+script = ExtResource("2_ourg0")
+audio = ExtResource("1_xm4o1")
+loop = false
+is_2d = false
+can_play_simultaneous = false
+pitch = 1.0
+volume = 0.0
+rnd_pitch = Vector2(0, 0)
+rnd_volume = Vector2(0, 0)
+max_distance = 2000
+bus = "Master"

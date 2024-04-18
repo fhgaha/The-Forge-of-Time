@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://game/rooms/forge_keeper_lair/room_forge_keeper_lair.gd" id="1_vl1xx"]
 [ext_resource type="PackedScene" uid="uid://cs0w0jn3htg1f" path="res://game/rooms/forge_keeper_lair/walkable_areas/walkable_area/walkable_area_walkable_area.tscn" id="2_4wuki"]
 [ext_resource type="PackedScene" uid="uid://co5a2mbo4olg3" path="res://game/rooms/forge_keeper_lair/props/bg/prop_bg.tscn" id="2_kto1e"]
-[ext_resource type="Texture2D" uid="uid://c6c0ds36nsre0" path="res://assets/tex/forge_keeper_lair.png" id="3_dv06q"]
+[ext_resource type="Texture2D" uid="uid://dejn6u757tu63" path="res://assets/tex/forge_keeper/forge_keeper_lair.png" id="4_82y82"]
 [ext_resource type="PackedScene" uid="uid://dpgevmwf1ekik" path="res://game/characters/hero/character_hero.tscn" id="4_mfyfh"]
 [ext_resource type="PackedScene" uid="uid://ba81313dym51r" path="res://game/characters/forge_keeper/character_forge_keeper.tscn" id="5_8j7x2"]
 [ext_resource type="PackedScene" uid="uid://dt5i4xj3ahpd4" path="res://game/rooms/forge_keeper_lair/hotspots/door/hotspot_door.tscn" id="5_coqj7"]
@@ -34,7 +34,7 @@ navigation_polygon = SubResource("NavigationPolygon_dr7am")
 
 [node name="Bg" parent="Props" instance=ExtResource("2_kto1e")]
 position = Vector2(160, 90)
-texture = ExtResource("3_dv06q")
+texture = ExtResource("4_82y82")
 interaction_polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
 
 [node name="Hotspots" type="Node2D" parent="."]
@@ -48,13 +48,10 @@ interaction_polygon = PackedVector2Array(-15, -20, 2, -23, 17, -14, 16, 25, -17,
 [node name="Regions" type="Node2D" parent="."]
 
 [node name="ScalingRegion" parent="Regions" instance=ExtResource("6_icf26")]
-position = Vector2(81, 93)
-scaling = true
-scale_bottom = 3.0
+position = Vector2(148, -149)
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="Regions/ScalingRegion"]
 modulate = Color(0, 1, 1, 1)
-polygon = PackedVector2Array(42, 78, -64, 79, -38, -18, 25, -19)
 
 [node name="Markers" type="Node2D" parent="."]
 

@@ -19,13 +19,8 @@ func _on_room_set() -> void:
 
 # When the node is clicked
 func _on_click() -> void:
-	# Replace the call to E.command_fallback() to implement your code.
-	#E.command_fallback()
-	# For example, you can make the player character walk to this character, gaze at it, and then
-	# say something:
-#	await C.player.walk_to_clicked()
-#	await C.player.face_clicked()
-#	await C.player.say("Hi!")
+	A.mx_boss_fight.stop()
+	A.mx_peaceful.play()
 	R.get_prop("ToolOfTime").show()
 	await C.TimeGoblin.play_animation("fall")
 	pass

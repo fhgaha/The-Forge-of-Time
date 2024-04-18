@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AudioCueMusic" load_steps=3 format=3 uid="uid://bbx43esfp6m8b"]
+
+[ext_resource type="AudioStream" uid="uid://b2mtnlnejx2cq" path="res://game/rooms/forest_enter/audio/mx_peaceful.wav" id="1_px51y"]
+[ext_resource type="Script" path="res://addons/popochiu/engine/audio_manager/audio_cue_music.gd" id="2_yumfo"]
+
+[resource]
+resource_name = "mx_peaceful"
+script = ExtResource("2_yumfo")
+audio = ExtResource("1_px51y")
+loop = true
+is_2d = false
+can_play_simultaneous = true
+pitch = 1.0
+volume = -5.0
+rnd_pitch = Vector2(0, 0)
+rnd_volume = Vector2(0, 0)
+max_distance = 2000
+bus = "Master"

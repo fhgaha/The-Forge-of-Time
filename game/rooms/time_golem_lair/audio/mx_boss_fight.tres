@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AudioCueMusic" load_steps=3 format=3 uid="uid://2mwk2wee2m3x"]
+
+[ext_resource type="AudioStream" uid="uid://d7qvalhcdtb4" path="res://game/rooms/time_golem_lair/audio/mx_boss_fight.wav" id="1_twbb0"]
+[ext_resource type="Script" path="res://addons/popochiu/engine/audio_manager/audio_cue_music.gd" id="2_indu2"]
+
+[resource]
+resource_name = "mx_boss_fight"
+script = ExtResource("2_indu2")
+audio = ExtResource("1_twbb0")
+loop = true
+is_2d = false
+can_play_simultaneous = true
+pitch = 1.0
+volume = 0.0
+rnd_pitch = Vector2(0, 0)
+rnd_volume = Vector2(0, 0)
+max_distance = 2000
+bus = "Master"
